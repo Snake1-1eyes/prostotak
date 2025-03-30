@@ -48,3 +48,34 @@ if path:
 else:
     print("Путь не найден")
 ```
+# Анализ алгоритма поиска второго минимального элемента
+
+## Временная сложность и практические измерения
+
+| Часть алгоритма | Временная сложность | Время выполнения (сек) | Описание |
+|-----------------|---------------------|----------------------|-----------|
+| Поиск второго минимума | O(n) | 0.000004 | Однократный проход по массиву для поиска второго минимального элемента |
+
+где n - количество элементов в массиве
+
+## Входные данные
+```python
+test_array = [5, 2, 8, 1, 9]
+```
+
+## Тестовый стенд
+```python
+import time
+
+def measure_execution_time(func, *args):
+    start_time = time.perf_counter()
+    result = func(*args)
+    end_time = time.perf_counter()
+    return result, end_time - start_time
+
+# Пример использования
+result, exec_time = measure_execution_time(find_second_min, test_array)
+print(f"Массив: {test_array}")
+print(f"Второй минимум: {result}")
+print(f"Время выполнения: {exec_time:.6f} сек\n")
+```
